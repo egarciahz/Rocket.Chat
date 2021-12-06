@@ -5,13 +5,13 @@ import React, { memo } from 'react';
 import type { IInstance } from '../../../../definition/IInstance';
 import type { IServerInfo } from '../../../../definition/IServerInfo';
 import type { IStats } from '../../../../definition/IStats';
-import SeatsCard from '../../../../ee/client/views/admin/info/SeatsCard';
+// import SeatsCard from '../../../../ee/client/views/admin/info/SeatsCard';
 import { DOUBLE_COLUMN_CARD_WIDTH } from '../../../components/Card';
 import Page from '../../../components/Page';
 import { useTranslation } from '../../../contexts/TranslationContext';
-import DeploymentCard from './DeploymentCard';
-import FederationCard from './FederationCard';
-import LicenseCard from './LicenseCard';
+// import DeploymentCard from './DeploymentCard';
+// import FederationCard from './FederationCard';
+// import LicenseCard from './LicenseCard';
 import UsageCard from './UsageCard';
 
 type InformationPageProps = {
@@ -27,9 +27,9 @@ const InformationPage = memo(function InformationPage({
 	canViewStatistics,
 	info,
 	statistics,
-	instances,
+	// instances,
+	// onClickDownloadInfo,
 	onClickRefreshButton,
-	onClickDownloadInfo,
 }: InformationPageProps) {
 	const t = useTranslation();
 
@@ -50,9 +50,9 @@ const InformationPage = memo(function InformationPage({
 			<Page.Header title={t('Info')}>
 				{canViewStatistics && (
 					<ButtonGroup>
-						<Button type='button' onClick={onClickDownloadInfo}>
+						{/* <Button type='button' onClick={onClickDownloadInfo}>
 							<Icon name='download' /> {t('Download_Info')}
-						</Button>
+						</Button> */}
 						<Button primary type='button' onClick={onClickRefreshButton}>
 							<Icon name='reload' /> {t('Refresh')}
 						</Button>
@@ -101,11 +101,11 @@ const InformationPage = memo(function InformationPage({
 						ref={ref}
 					>
 						<Margins all='x8'>
-							<DeploymentCard info={info} statistics={statistics} instances={instances} />
-							<LicenseCard />
+							{/* <DeploymentCard info={info} statistics={statistics} instances={instances} /> */}
+							{/* <LicenseCard /> */}
 							<UsageCard vertical={isSmall} statistics={statistics} />
-							<FederationCard />
-							<SeatsCard />
+							{/* <FederationCard /> */}
+							{/* <SeatsCard /> */}
 						</Margins>
 					</Box>
 				</Box>

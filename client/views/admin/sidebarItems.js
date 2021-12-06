@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
+// import { Meteor } from 'meteor/meteor';
 
-import { hasPermission, hasRole } from '../../../app/authorization/client';
+import { hasPermission } from '../../../app/authorization/client';
 import { createSidebarItems } from '../../lib/createSidebarItems';
 
 export const {
@@ -14,12 +14,12 @@ export const {
 		icon: 'info-circled',
 		permissionGranted: () => hasPermission('view-statistics'),
 	},
-	{
-		href: 'admin-import',
-		i18nLabel: 'Import',
-		icon: 'import',
-		permissionGranted: () => hasPermission('run-import'),
-	},
+	// {
+	// 	href: 'admin-import',
+	// 	i18nLabel: 'Import',
+	// 	icon: 'import',
+	// 	permissionGranted: () => hasPermission('run-import'),
+	// },
 	{
 		href: 'admin-users',
 		i18nLabel: 'Users',
@@ -32,47 +32,47 @@ export const {
 		icon: 'hashtag',
 		permissionGranted: () => hasPermission('view-room-administration'),
 	},
-	{
-		href: 'invites',
-		i18nLabel: 'Invites',
-		icon: 'user-plus',
-		permissionGranted: () => hasPermission('create-invite-links'),
-	},
-	{
-		icon: 'cloud-plus',
-		href: 'cloud',
-		i18nLabel: 'Connectivity_Services',
-		permissionGranted: () => hasPermission('manage-cloud'),
-	},
-	{
-		href: 'admin-view-logs',
-		i18nLabel: 'View_Logs',
-		icon: 'post',
-		permissionGranted: () => hasPermission('view-logs'),
-	},
-	{
-		href: 'custom-sounds',
-		i18nLabel: 'Custom_Sounds',
-		icon: 'volume',
-		permissionGranted: () => hasPermission(['manage-sounds']),
-	},
-	{
-		icon: 'discover',
-		href: 'federation-dashboard',
-		i18nLabel: 'Federation Dashboard',
-		permissionGranted: () => hasRole(Meteor.userId(), 'admin'),
-	},
-	{
-		icon: 'cube',
-		href: 'admin-marketplace',
-		i18nLabel: 'Apps',
-		permissionGranted: () => hasPermission(['manage-apps']),
-	},
-	{
-		icon: 'mail',
-		href: 'admin-email-inboxes',
-		i18nLabel: 'Email_Inboxes',
-		tag: 'Alpha',
-		permissionGranted: () => hasPermission(['manage-email-inbox']),
-	},
+	// {
+	// 	href: 'invites',
+	// 	i18nLabel: 'Invites',
+	// 	icon: 'user-plus',
+	// 	permissionGranted: () => hasPermission('create-invite-links'),
+	// },
+	// {
+	// 	icon: 'cloud-plus',
+	// 	href: 'cloud',
+	// 	i18nLabel: 'Connectivity_Services',
+	// 	permissionGranted: () => hasPermission('manage-cloud'),
+	// },
+	// {
+	// 	href: 'admin-view-logs',
+	// 	i18nLabel: 'View_Logs',
+	// 	icon: 'post',
+	// 	permissionGranted: () => hasPermission('view-logs'),
+	// },
+	// {
+	// 	href: 'custom-sounds',
+	// 	i18nLabel: 'Custom_Sounds',
+	// 	icon: 'volume',
+	// 	permissionGranted: () => hasPermission(['manage-sounds']),
+	// },
+	// {
+	// 	icon: 'discover',
+	// 	href: 'federation-dashboard',
+	// 	i18nLabel: 'Federation Dashboard',
+	// 	permissionGranted: () => hasRole(Meteor.userId(), 'admin'),
+	// },
+	// {
+	// 	icon: 'cube',
+	// 	href: 'admin-marketplace',
+	// 	i18nLabel: 'Apps',
+	// 	permissionGranted: () => hasPermission(['manage-apps']),
+	// },
+	// {
+	// 	icon: 'mail',
+	// 	href: 'admin-email-inboxes',
+	// 	i18nLabel: 'Email_Inboxes',
+	// 	tag: 'Alpha',
+	// 	permissionGranted: () => hasPermission(['manage-email-inbox']),
+	// },
 ]);

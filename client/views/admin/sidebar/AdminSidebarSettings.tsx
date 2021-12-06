@@ -1,6 +1,6 @@
-import { Box, Icon, SearchInput, Skeleton } from '@rocket.chat/fuselage';
-import { useDebouncedValue } from '@rocket.chat/fuselage-hooks';
-import React, { useCallback, useState, useMemo, FC } from 'react';
+import { Box, Skeleton } from '@rocket.chat/fuselage';
+// import { useDebouncedValue } from '@rocket.chat/fuselage-hooks';
+import React, { useMemo, FC } from 'react';
 
 import { ISetting } from '../../../../definition/ISetting';
 import Sidebar from '../../../components/Sidebar';
@@ -63,10 +63,10 @@ type AdminSidebarSettingsProps = {
 
 const AdminSidebarSettings: FC<AdminSidebarSettingsProps> = ({ currentPath }) => {
 	const t = useTranslation();
-	const [filter, setFilter] = useState('');
-	const handleChange = useCallback((e) => setFilter(e.currentTarget.value), []);
+	// const [filter, setFilter] = useState('');
+	// const handleChange = useCallback((e) => setFilter(e.currentTarget.value), []);
 
-	const groups = useSettingsGroups(useDebouncedValue(filter, 400));
+	const groups = useSettingsGroups('' /* useDebouncedValue(filter, 400) */);
 	const isLoadingGroups = false; // TODO: get from PrivilegedSettingsContext
 
 	return (
@@ -74,23 +74,25 @@ const AdminSidebarSettings: FC<AdminSidebarSettingsProps> = ({ currentPath }) =>
 			<Box pi='x24' pb='x8' fontScale='p2' color='info'>
 				{t('Settings')}
 			</Box>
-			<Box pi='x24' pb='x8' display='flex'>
+			{/* <Box pi='x24' pb='x8' display='flex'>
 				<SearchInput
 					value={filter}
 					placeholder={t('Search')}
 					onChange={handleChange}
 					addon={<Icon name='magnifier' size='x20' />}
 				/>
-			</Box>
+			</Box> */}
 			<Box pb='x16' display='flex' flexDirection='column'>
 				{isLoadingGroups && <Skeleton />}
 				{!isLoadingGroups && !!groups.length && (
 					<Sidebar.ItemsAssembler
-						items={groups.map((group) => ({
-							name: t((group.i18nLabel || group._id) as TranslationKey),
-							pathSection: 'admin',
-							pathGroup: group._id,
-						}))}
+						items={groups
+							.filter((item) => ['Accounts', 'Message', 'FileUpload'].includes(item._id))
+							.map((group) => ({
+								name: t((group.i18nLabel || group._id) as TranslationKey),
+								pathSection: 'admin',
+								pathGroup: group._id,
+							}))}
 						currentPath={currentPath}
 					/>
 				)}
