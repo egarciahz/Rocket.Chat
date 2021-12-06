@@ -22,7 +22,7 @@ const RocketChatAssetsInstance = new RocketChatFile.GridFS({
 const assets = {
 	logo: {
 		label: 'logo (svg, png, jpg)',
-		defaultUrl: 'images/logo/logo.svg',
+		defaultUrl: 'images/logo/logo.png',
 		constraints: {
 			type: 'image',
 			extensions: ['svg', 'png', 'jpg', 'jpeg'],
@@ -41,18 +41,18 @@ const assets = {
 	},
 	favicon_ico: {
 		label: 'favicon (ico)',
-		defaultUrl: 'favicon.ico',
+		defaultUrl: 'favicon.png',
 		constraints: {
 			type: 'image',
-			extensions: ['ico'],
+			extensions: ['png'],
 		},
 	},
 	favicon: {
 		label: 'favicon (svg)',
-		defaultUrl: 'images/logo/icon.svg',
+		defaultUrl: 'images/logo/icon.png',
 		constraints: {
 			type: 'image',
-			extensions: ['svg'],
+			extensions: ['png'],
 		},
 	},
 	favicon_16: {

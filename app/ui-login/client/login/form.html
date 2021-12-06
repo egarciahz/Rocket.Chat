@@ -125,15 +125,15 @@
 						{{/if}}
 					{{/if}}
 
-					{{#if registrationAllowed}}
-						<button type="button" class="rc-button rc-button--nude register">{{_ 'Register'}}</button>
-					{{else}}
+					<!-- {{#if registrationAllowed}}
+						<button type="button" class="rc-button rc-button- -nude register">{{_ 'Register'}}</button>
+					{{else}} 
 						{{#if linkReplacementText}}
 							<div class="register-link-replacement">
 								{{{linkReplacementText}}}
 							</div>
 						{{/if}}
-					{{/if}}
+					{{/if}} -->
 				{{else}}
 					<div class="rc-button__group rc-button__group--vertical">
 						<button class='rc-button rc-button--primary login'>{{btnLoginSave}}</button>
@@ -147,10 +147,10 @@
 			</div>
 		{{/unless}}
 	</form>
-	<div class='login-terms'>
+	<!-- <div class='login-terms'>
 		{{{loginTerms}}}
 		<div class="powered-by">
 			Powered by <a class="color-tertiary-font-color" href="https://rocket.chat">Open Source Chat Platform Rocket.Chat</a>.
 		</div>
-	</div>
+	</div> -->
 </template>

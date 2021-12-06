@@ -6,7 +6,7 @@ type LogoProps = Omit<ComponentProps<typeof Box>, 'src'> & {
 	src?: string;
 };
 
-const Logo = ({ src = 'images/logo/logo.svg', ...props }: LogoProps): ReactElement => {
+const Logo = ({ src = 'images/logo/logo.png', ...props }: LogoProps): ReactElement => {
 	const [isLoaded, setLoaded] = useState(false);
 	const isPlaceholderVisible = !src || !isLoaded;
 

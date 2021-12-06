@@ -10,11 +10,16 @@ const SidebarFooter = (): ReactElement => {
 		& img {
 			max-width: 100%;
 			height: 100%;
+			margin: auto;
 		}
 
 		& a:any-link {
 			color: ${colors.n600};
 			color: var(--rc-color-primary-light, ${colors.n600});
+			margin: auto;
+			display: flex;
+			width: 100%;
+			height: 2rem;
 		}
 	`;
 
