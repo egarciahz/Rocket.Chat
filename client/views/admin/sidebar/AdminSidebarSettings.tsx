@@ -68,7 +68,6 @@ const AdminSidebarSettings: FC<AdminSidebarSettingsProps> = ({ currentPath }) =>
 
 	const groups = useSettingsGroups('' /* useDebouncedValue(filter, 400) */);
 	const isLoadingGroups = false; // TODO: get from PrivilegedSettingsContext
-
 	return (
 		<Box is='section' display='flex' flexDirection='column' flexShrink={0} pb='x24'>
 			<Box pi='x24' pb='x8' fontScale='p2' color='info'>
@@ -87,7 +86,7 @@ const AdminSidebarSettings: FC<AdminSidebarSettingsProps> = ({ currentPath }) =>
 				{!isLoadingGroups && !!groups.length && (
 					<Sidebar.ItemsAssembler
 						items={groups
-							.filter((item) => ['Accounts', 'Message', 'FileUpload'].includes(item._id))
+							.filter((item) => ['Accounts', 'Message', 'FileUpload', 'Layout'].includes(item._id))
 							.map((group) => ({
 								name: t((group.i18nLabel || group._id) as TranslationKey),
 								pathSection: 'admin',
